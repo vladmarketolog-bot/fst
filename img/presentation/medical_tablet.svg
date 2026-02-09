@@ -1,5 +1,49 @@
-<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
- <rect width="100%" height="100%" fill="#111827"/>
- <text x="50%" y="50%" font-family="Arial" font-size="24" fill="#6B7280" text-anchor="middle" dy=".3em">Medical Tablet AI (Placeholder)</text>
- <rect x="5%" y="5%" width="90%" height="90%" fill="none" stroke="#374151" stroke-width="2" stroke-dasharray="10 10"/>
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="med-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+     <linearGradient id="screen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#334155;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:0.5" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#med-bg)"/>
+  
+  <!-- Tablet Body -->
+  <rect x="250" y="50" width="300" height="350" rx="20" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+  
+  <!-- Screen -->
+  <rect x="265" y="65" width="270" height="320" rx="5" fill="url(#screen)"/>
+  
+  <!-- UI Elements -->
+  <!-- Header -->
+  <rect x="280" y="80" width="240" height="30" rx="5" fill="#3b82f6" opacity="0.2"/>
+  <circle cx="295" cy="95" r="8" fill="#3b82f6"/>
+  <rect x="315" y="90" width="100" height="10" rx="2" fill="#94a3b8"/>
+  
+  <!-- Patient Data -->
+  <rect x="280" y="130" width="100" height="100" rx="5" fill="#334155" opacity="0.5"/>
+  <path d="M330 160 L330 200 M310 180 L350 180" stroke="#ef4444" stroke-width="5" stroke-linecap="round"/>
+  
+  <!-- Charts -->
+  <rect x="395" y="130" width="125" height="100" rx="5" fill="#334155" opacity="0.5"/>
+  <path d="M405 210 L430 190 L450 200 L480 160 L510 170" stroke="#22c55e" stroke-width="2" fill="none"/>
+  
+  <!-- Text Lines -->
+  <rect x="280" y="250" width="240" height="10" rx="2" fill="#475569"/>
+  <rect x="280" y="270" width="200" height="10" rx="2" fill="#475569"/>
+  <rect x="280" y="290" width="220" height="10" rx="2" fill="#475569"/>
+  
+  <!-- Button -->
+  <rect x="350" y="340" width="100" height="30" rx="15" fill="#3b82f6"/>
+  <text x="400" y="360" font-family="Arial" font-size="12" fill="white" text-anchor="middle" dominant-baseline="middle">ANALYZE</text>
+  
+  <!-- Floating Pulse Line Background -->
+  <path d="M0 225 L100 225 L120 180 L140 270 L160 225 L200 225" stroke="#ef4444" stroke-width="2" fill="none" opacity="0.2"/>
+  <path d="M600 225 L640 225 L660 180 L680 270 L700 225 L800 225" stroke="#ef4444" stroke-width="2" fill="none" opacity="0.2"/>
+
 </svg>
