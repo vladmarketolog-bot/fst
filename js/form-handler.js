@@ -1,7 +1,7 @@
 // Form submission handler for Google Sheets integration
 // Replace SCRIPT_URL with your Google Apps Script Web App URL
 
-const SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_URL_HERE'; // TODO: Replace with actual URL
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxEknH519zTdeFtMe_Xn747dmGGS6SDTLRu51uCgKJFmV25bBewHlOvzudin8lY5FM5ZQ/exec';
 
 let selectedOption = null;
 

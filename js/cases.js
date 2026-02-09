@@ -31,8 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Populate Header & Basic Info
         mCategory.textContent = data.category;
         mTitle.textContent = data.title;
-        // Use innerHTML for description to allow bolding or line breaks if needed
-        mDescription.innerHTML = data.description;
 
         // Styling based on color
         mIconContainer.className = `p-3 rounded-xl ${color.bg} ${color.text} mb-4 w-fit`;
@@ -40,33 +38,16 @@ document.addEventListener('DOMContentLoaded', () => {
         mCategory.className = `text-xs font-bold uppercase tracking-wider ${color.text} mb-2`;
 
         // --- Enhanced Content Logic ---
-        // Find or create a container for the dynamic body content
-        let bodyContainer = modal.querySelector('.modal-body-content');
-        if (!bodyContainer) {
-            // Create it if it doesn't exist (replace the static structure)
-            const staticDesc = document.getElementById('m-description');
-            const parent = staticDesc.parentNode;
-
-            // Clear the parent completely to rebuild
-            parent.innerHTML = '<div class="modal-body-content"></div>';
-            bodyContainer = parent.querySelector('.modal-body-content');
-
-            // Re-attach description since we cleared it
-            bodyContainer.appendChild(staticDesc);
-            mDescription = staticDesc; // Update reference? No, easier to just rebuild structure.
-
-            // Actually, let's just clear the parent and rebuild every time.
-            // But wait, our selectors above depend on IDs. 
-            // Let's grab the `m-description` and everything after it.
-        }
-
-        // Better approach: Target the container that holds description and metrics
+        // Target the container that holds description and metrics
         const contentContainer = document.querySelector('#case-modal .space-y-6');
+        if (!contentContainer) {
+            console.error('Modal content container not found');
+            return;
+        }
         contentContainer.innerHTML = ''; // Clear existing content
 
         // 1. Description
         const descEl = document.createElement('p');
-        descEl.id = 'm-description';
         descEl.className = 'text-gray-300 leading-relaxed text-base';
         descEl.innerHTML = data.description;
         contentContainer.appendChild(descEl);
@@ -166,7 +147,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close on click outside
     modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
+        if (!e.target.closest('.modal-content')) {
+            closeModal();
+        }
     });
 
     // Close on Escape
