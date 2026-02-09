@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Win-Win | ООО "ФСТ-Интегро" - Разработка ИИ-решений промышленного уровня</title>
+  <meta name="description"
+    content="Разработка корпоративных ИИ-решений, нейросетей и ML-систем для госсектора и крупного бизнеса. Резидент Иннополис. 152-ФЗ, 187-ФЗ (КИИ). Сокращение расходов на 20-40%.">
+  <meta name="keywords"
+    content="ИИ разработка, machine learning, нейросети для бизнеса, разработка ПО, Иннополис, госзакупки ИИ, RAG, LLM, предиктивная аналитика">
+  <link rel="canonical" href="https://fst-ai.ru/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fst-ai.ru/">
+  <meta property="og:title" content="FST AI - Промышленные ИИ-решения">
+  <meta property="og:description"
+    content="Разработка ИИ-решений промышленного уровня. Сокращаем операционные расходы на 20-40%. Резидент Иннополис.">
+  <meta property="og:image" content="https://fst-ai.ru/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://fst-ai.ru/">
+  <meta property="twitter:title" content="FST AI - Промышленные ИИ-решения">
+  <meta property="twitter:description"
+    content="Разработка ИИ-решений промышленного уровня. Сокращаем операционные расходы на 20-40%. Резидент Иннополис.">
+  <meta property="twitter:image" content="https://fst-ai.ru/og-image.jpg">
+
+  <!-- Local Assets -->
+  <link rel="stylesheet" href="css/fonts.css">
+  <script src="js/tailwindcss.js"></script>
+  <script src="js/lucide.min.js"></script>
+
+  <style>
+    /* Fonts are imported via css/fonts.css */
+
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    ::selection {
+      background-color: rgb(37, 99, 235);
+      color: white;
+    }
+
+    /* Animations */
+    @keyframes ping {
+
+      75%,
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+
+    .animate-ping {
+      animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 0.5s ease-out forwards;
+      opacity: 0;
+      /* Initially hidden */
+    }
+
+    /* Telegram Chat Styles */
+    .bg-telegram-pattern {
+      background-image: radial-gradient(#161e2b 1px, transparent 0);
+      background-size: 20px 20px;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-[#020408] text-gray-100 overflow-x-hidden">
+
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-5">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-blue-700 rounded-lg flex items-center justify-center shadow-lg shadow-blue-900/20">
+          <i data-lucide="cpu" class="text-white w-6 h-6"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl font-bold tracking-tight text-white leading-none">FST AI</span>
+          <span class="text-[10px] uppercase tracking-wider text-gray-400 mt-1 font-medium">Win-Win group</span>
+        </div>
+      </div>
+
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+        <a href="#about" class="hover:text-white transition-colors">Компания</a>
+        <a href="#alabuga" class="hover:text-white transition-colors">Кейс Алабуга</a>
+        <a href="#cases" class="hover:text-white transition-colors">Проекты</a>
+        <a href="#services" class="hover:text-white transition-colors">Компетенции</a>
+        <a href="#contact"
+          class="bg-white text-black px-6 py-2.5 rounded hover:bg-gray-200 transition-colors font-bold text-xs uppercase tracking-wide">
+          Связаться
+        </a>
+      </div>
+
+      <button id="mobile-menu-btn" class="md:hidden text-white">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 bg-[#020408] flex-col items-center justify-center space-y-8 hidden">
+    <a href="#about" class="text-2xl font-medium mobile-menu-link">Компания</a>
+    <a href="#alabuga" class="text-2xl font-medium mobile-menu-link">Кейс Алабуга</a>
+    <a href="#cases" class="text-2xl font-medium mobile-menu-link">Проекты</a>
+    <a href="#services" class="text-2xl font-medium mobile-menu-link">Услуги</a>
+    <a href="#contact" class="text-xl bg-blue-600 px-8 py-3 rounded mobile-menu-link">Связаться</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+    <div class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-blue-900/10 rounded-full blur-[100px] -z-10">
+    </div>
+
+    <div class="container mx-auto px-6 text-center md:text-left grid md:grid-cols-2 gap-16 items-center">
+      <div class="space-y-8">
+        <div
+          class="inline-flex items-center gap-3 px-4 py-2 rounded border border-blue-500/20 bg-blue-500/5 backdrop-blur-md">
+          <span class="flex h-2 w-2 relative">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+          </span>
+          <span class="text-xs font-semibold text-blue-200 uppercase tracking-wide">Резидент Иннополис • Работаем с
+            2017</span>
+        </div>
+
+        <h1 class="text-4xl md:text-6xl font-bold leading-tight text-white">
+          Разработка ИИ-решений <br>
+          <span class="text-blue-500">промышленного уровня</span>
+        </h1>
+
+        <p class="text-lg text-gray-400 max-w-xl leading-relaxed">
+          Сокращаем операционные расходы на 20-40% с помощью ИИ-решений, которые работают в вашем защищенном контуре.
+          <span class="text-gray-200 block mt-2 font-medium">
+            Локальное развертывание. Соответствие 152-ФЗ. Передача исходного кода.
+          </span>
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
+          <a href="#contact"
+            class="px-8 py-4 bg-blue-700 hover:bg-blue-600 text-white rounded font-semibold transition-all flex items-center justify-center gap-2 group shadow-lg shadow-blue-900/30">
+            Рассчитать проект
+            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+          </a>
+          <a href="presentation.html"
+            class="px-8 py-4 bg-transparent hover:bg-white/5 border border-white/20 text-white rounded font-semibold transition-all flex items-center justify-center gap-2 group">
+            <i data-lucide="presentation" class="w-4 h-4"></i>
+            Смотреть презентацию
+          </a>
+        </div>
+
+        <div class="pt-10 border-t border-white/5">
+          <p class="text-xs text-gray-500 uppercase tracking-widest mb-4 font-semibold">Нам доверяют лидеры рынка</p>
+          <div class="flex flex-wrap gap-8 items-center justify-center md:justify-start opacity-90">
+            <span class="text-xl font-bold text-gray-300 font-serif">SBER</span>
+            <span class="text-xl font-bold text-gray-300">Yandex</span>
+            <span class="text-xl font-bold text-blue-400">OZON</span>
+            <div class="flex flex-col leading-none">
+              <span class="text-[10px] uppercase text-gray-500">Фонд содействия</span>
+              <span class="text-sm font-bold text-gray-300">ИННОВАЦИЯМ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative hidden md:block">
+        <div class="relative z-10 bg-[#0B0D14] border border-white/10 rounded-xl shadow-2xl overflow-hidden">
+          <div class="bg-[#151921] px-6 py-4 border-b border-white/5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/50"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/50"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/50"></div>
+            </div>
+            <div class="text-xs font-mono text-gray-500 flex items-center gap-2">
+              <i data-lucide="shield-check" class="w-3 h-3 text-green-500"></i>
+              SECURE CONNECTION // GOV_SEGMENT
+            </div>
+          </div>
+
+          <div class="p-6 font-mono text-sm space-y-4">
+            <div class="flex gap-4">
+              <div class="text-blue-500 shrink-0">SYS:</div>
+              <div class="text-gray-300">Инициализация анализа закупок. Период: Q1 2026.</div>
+            </div>
+            <div class="flex gap-4">
+              <div class="text-purple-500 shrink-0">AI_CORE:</div>
+              <div class="text-gray-300">
+                Анализ 14,500 позиций завершен.<br>
+                <span class="text-red-400">! Обнаружено аномальное отклонение цен (22% выше рынка).</span>
+              </div>
+            </div>
+
+            <div class="mt-4 border border-white/10 rounded bg-white/5 p-4">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-gray-400 text-xs uppercase">Отчет для департамента контроля</span>
+                <span class="text-green-500 text-xs">Подписано ЭЦП</span>
+              </div>
+              <table class="w-full text-left text-xs">
+                <thead>
+                  <tr class="text-gray-500 border-b border-white/10">
+                    <th class="pb-2">Поставщик</th>
+                    <th class="pb-2">Товар</th>
+                    <th class="pb-2 text-right">Отклонение</th>
+                  </tr>
+                </thead>
+                <tbody class="text-gray-300">
+                  <tr>
+                    <td class="py-2">ООО "СтройБаза"</td>
+                    <td class="py-2">Песок строительный</td>
+                    <td class="py-2 text-right text-red-400">+207%</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2">ООО "ИнтерСтрой"</td>
+                    <td class="py-2">Грунтовка</td>
+                    <td class="py-2 text-right text-red-400">+22.2%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="flex gap-4 animate-pulse">
+              <div class="text-green-500 shrink-0">ACTION:</div>
+              <div class="text-gray-300">Генерация претензий и отправка юристам...</div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="absolute -bottom-6 -right-6 bg-[#1A1F29] border border-white/10 p-4 rounded-lg shadow-xl flex items-center gap-3 z-20">
+          <i data-lucide="server" class="text-green-400 w-8 h-8"></i>
+          <div>
+            <div class="text-xs text-gray-400">Uptime</div>
+            <div class="text-lg font-bold text-white">99.99%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flagship Case: Alabuga -->
+  <!-- Flagship Case: Alabuga -->
+  <section id="alabuga" class="py-20 bg-[#0B0D14] border-y border-white/5">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col lg:flex-row gap-16 items-start">
+        <div class="w-full lg:w-1/2 flex flex-col justify-center">
+
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white leading-tight">
+            Разработка ИИ-ассистента для<br>
+            <span class="text-cyan-400">АО «ОЭЗ ППТ «Алабуга»</span>
+          </h2>
+
+          <p class="text-gray-400 mb-8 text-base leading-relaxed">
+            В сентябре 2025 нами начата разработка корпоративного ассистента.<br>
+            Система работает в закрытом контуре заказчика (On-Premise),<br>
+            обеспечивая полную конфиденциальность данных.
+          </p>
+
+          <!-- Problem Block -->
+          <div class="bg-[#1a1a1a] border border-red-900/30 rounded-lg p-5 mb-4">
+            <div class="flex items-start gap-3 mb-3">
+              <div class="w-8 h-8 bg-red-500/10 rounded flex items-center justify-center shrink-0">
+                <i data-lucide="x-circle" class="w-5 h-5 text-red-500"></i>
+              </div>
+              <div>
+                <h3 class="text-white font-bold text-sm mb-1">Проблема: Завышение смет</h3>
+                <p class="text-gray-400 text-xs leading-relaxed">
+                  Подрядчики завышают цены на материалы до 200%.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Solution Block -->
+          <div class="bg-[#1a1a1a] border border-green-900/30 rounded-lg p-5 mb-8">
+            <div class="flex items-start gap-3 mb-3">
+              <div class="w-8 h-8 bg-green-500/10 rounded flex items-center justify-center shrink-0">
+                <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
+              </div>
+              <div>
+                <h3 class="text-white font-bold text-sm mb-1">Решение: Авто-сверка</h3>
+                <p class="text-gray-400 text-xs leading-relaxed">
+                  AI проверяет 100% позиций с рынком за секунды.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Compact Metrics -->
+          <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="bg-[#1a1a1a] border border-white/10 rounded-lg p-5">
+              <div class="text-3xl font-bold text-white mb-2">3 сек</div>
+              <div class="text-xs text-gray-500">Поиск в регламентах с ссылкой на документ</div>
+            </div>
+            <div class="bg-[#1a1a1a] border border-white/10 rounded-lg p-5">
+              <div class="text-3xl font-bold text-white mb-2">Local</div>
+              <div class="text-xs text-gray-500">Data-Free Pack: утечки исключены</div>
+            </div>
+          </div>
+
+          <!-- ROI Metrics Compact -->
+          <div class="bg-gradient-to-r from-blue-900/20 to-cyan-900/20 border border-cyan-500/30 rounded-lg p-5">
+            <div class="text-xs font-bold text-cyan-400 uppercase tracking-wide mb-3">💰 Экономический эффект (прогноз)
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+              <div>
+                <div class="text-xl font-bold text-white mb-1">12-18 млн ₽</div>
+                <div class="text-[10px] text-gray-500">Экономия в год</div>
+              </div>
+              <div>
+                <div class="text-xl font-bold text-green-400 mb-1">8 мес.</div>
+                <div class="text-[10px] text-gray-500">Окупаемость</div>
+              </div>
+              <div>
+                <div class="text-xl font-bold text-cyan-400 mb-1">240%</div>
+                <div class="text-[10px] text-gray-500">ROI за год</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- System Modules Timeline -->
+          <div class="mt-10">
+            <h4 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Модули системы</h4>
+
+            <div class="space-y-3">
+
+              <!-- Item 1: Telegram Bot -->
+              <div
+                class="bg-white/5 rounded-xl p-4 border border-white/5 hover:border-blue-500/30 hover:bg-white/10 transition-all duration-300 group flex gap-4 cursor-default">
+                <div
+                  class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center shrink-0 group-hover:bg-blue-500/20 group-hover:scale-105 transition-all duration-300 border border-blue-500/10">
+                  <i data-lucide="bot" class="w-5 h-5 text-blue-400"></i>
+                </div>
+                <div class="flex-grow flex flex-col justify-center">
+                  <div class="flex justify-between items-center mb-1">
+                    <h4 class="text-white font-bold text-sm group-hover:text-blue-100 transition-colors">Telegram-бот
+                      (Admin & LLM)</h4>
+                    <div class="flex items-center gap-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                      <span class="text-[10px] font-bold text-green-400 uppercase tracking-wide">Пилот</span>
+                    </div>
+                  </div>
+                  <p class="text-xs text-gray-400 leading-snug group-hover:text-gray-300 transition-colors pr-8">
+                    Финальное тестирование и подготовка к старту экспл.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 2: Max Bot -->
+              <div
+                class="bg-white/5 rounded-xl p-4 border border-white/5 hover:border-purple-500/30 hover:bg-white/10 transition-all duration-300 group flex gap-4 cursor-default">
+                <div
+                  class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center shrink-0 group-hover:bg-purple-500/20 group-hover:scale-105 transition-all duration-300 border border-purple-500/10">
+                  <i data-lucide="message-circle" class="w-5 h-5 text-purple-400"></i>
+                </div>
+                <div class="flex-grow flex flex-col justify-center">
+                  <div class="flex justify-between items-center mb-1">
+                    <h4 class="text-white font-bold text-sm group-hover:text-purple-100 transition-colors">Бот в
+                      мессенджере Max</h4>
+                    <div class="flex items-center gap-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+                      <span class="text-[10px] font-bold text-blue-400 uppercase tracking-wide">В 2026</span>
+                    </div>
+                  </div>
+                  <p class="text-xs text-gray-400 leading-snug group-hover:text-gray-300 transition-colors">
+                    Интеграция с корпоративным мессенджером (до 28.02.26).
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 3: Price Analysis -->
+              <div
+                class="bg-white/5 rounded-xl p-4 border border-white/5 hover:border-green-500/30 hover:bg-white/10 transition-all duration-300 group flex gap-4 cursor-default">
+                <div
+                  class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center shrink-0 group-hover:bg-green-500/20 group-hover:scale-105 transition-all duration-300 border border-green-500/10">
+                  <i data-lucide="bar-chart-3" class="w-5 h-5 text-green-400"></i>
+                </div>
+                <div class="flex-grow flex flex-col justify-center">
+                  <div class="flex justify-between items-center mb-1">
+                    <h4 class="text-white font-bold text-sm group-hover:text-green-100 transition-colors">Анализ цен и
+                      бюджетов</h4>
+                    <div class="flex items-center gap-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                      <span class="text-[10px] font-bold text-green-400 uppercase tracking-wide">Пилот</span>
+                    </div>
+                  </div>
+                  <p class="text-xs text-gray-400 leading-snug group-hover:text-gray-300 transition-colors">
+                    Сверка смет с рынком. Выявление аномалий.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 4: Doc Analysis -->
+              <div
+                class="bg-white/5 rounded-xl p-4 border border-white/5 hover:border-orange-500/30 hover:bg-white/10 transition-all duration-300 group flex gap-4 cursor-default">
+                <div
+                  class="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center shrink-0 group-hover:bg-orange-500/20 group-hover:scale-105 transition-all duration-300 border border-orange-500/10">
+                  <i data-lucide="file-text" class="w-5 h-5 text-orange-400"></i>
+                </div>
+                <div class="flex-grow flex flex-col justify-center">
+                  <div class="flex justify-between items-center mb-1">
+                    <h4 class="text-white font-bold text-sm group-hover:text-orange-100 transition-colors">Анализ
+                      документов</h4>
+                    <div class="flex items-center gap-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                      <span class="text-[10px] font-bold text-green-400 uppercase tracking-wide">Пилот</span>
+                    </div>
+                  </div>
+                  <p class="text-xs text-gray-400 leading-snug group-hover:text-gray-300 transition-colors">
+                    Взаимодействие с файлами PDF, Word, Excel.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 5: Optimization -->
+              <div
+                class="bg-white/5 rounded-xl p-4 border border-white/5 hover:border-gray-500/30 hover:bg-white/10 transition-all duration-300 group flex gap-4 opacity-60 hover:opacity-100 cursor-default">
+                <div
+                  class="w-10 h-10 rounded-lg bg-gray-500/10 flex items-center justify-center shrink-0 group-hover:bg-gray-500/20 group-hover:scale-105 transition-all duration-300 border border-gray-500/10">
+                  <i data-lucide="layers" class="w-5 h-5 text-gray-400"></i>
+                </div>
+                <div class="flex-grow flex flex-col justify-center">
+                  <div class="flex justify-between items-center mb-1">
+                    <h4 class="text-gray-300 group-hover:text-white transition-colors font-bold text-sm">Оптимизация и
+                      БЗ
+                    </h4>
+                    <div class="flex items-center gap-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-gray-500"></span>
+                      <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wide">План</span>
+                    </div>
+                  </div>
+                  <p class="text-xs text-gray-500 group-hover:text-gray-400 transition-colors">
+                    Старт работ запланирован на март 2026.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- End System Modules Timeline -->
+
+        </div>
+        <!-- End Left Column -->
+
+        <!-- Right Column: Telegram Chat -->
+        <div class="w-full lg:w-1/2 relative lg:sticky lg:top-24">
+          <div class="absolute inset-0 bg-gradient-to-tr from-blue-900/20 to-transparent rounded-2xl -z-10 blur-xl">
+          </div>
+
+          <!-- Chat Window: Telegram Style -->
+          <div
+            class="bg-[#0e1621] border border-white/10 rounded-3xl shadow-2xl overflow-hidden max-w-sm mx-auto font-sans relative">
+
+            <!-- Status Bar Mockup -->
+            <div
+              class="bg-[#17212b] px-6 pt-3 pb-1 flex justify-between items-center text-white text-[10px] font-medium">
+              <span>12:30</span>
+              <div class="flex gap-1.5 items-center">
+                <i data-lucide="signal" class="w-3 h-3"></i>
+                <i data-lucide="wifi" class="w-3 h-3"></i>
+                <div class="w-4 h-2.5 border border-white/30 rounded-[1px] relative">
+                  <div class="bg-white h-full w-[80%]"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Telegram Header -->
+            <div class="bg-[#17212b] p-3 flex items-center gap-4 border-b border-[#0e1621] shadow-md z-10 relative">
+              <i data-lucide="arrow-left" class="text-white w-5 h-5 cursor-pointer hover:opacity-80"></i>
+
+              <div class="flex items-center gap-3 flex-grow">
+                <div
+                  class="w-9 h-9 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold text-sm ring-2 ring-[#0e1621]">
+                  AB
+                </div>
+                <div>
+                  <div class="font-bold text-white text-sm leading-none mb-0.5">Alla But</div>
+                  <div class="text-[11px] text-[#6c7883]">bot</div>
+                </div>
+              </div>
+
+              <i data-lucide="more-vertical" class="text-white w-5 h-5 cursor-pointer hover:opacity-80"></i>
+            </div>
+
+            <!-- Messages Area -->
+            <div class="p-3 space-y-4 bg-[#0e1621] h-[450px] overflow-y-auto relative bg-telegram-pattern">
+
+              <!-- Date Separator -->
+              <div class="flex justify-center my-4">
+                <span
+                  class="bg-[#182533]/80 text-[#8594a1] text-[10px] font-medium px-3 py-1 rounded-full backdrop-blur-sm">Сегодня</span>
+              </div>
+
+              <!-- User Message 1 -->
+              <div class="flex justify-end animate-fade-in-up" style="animation-delay: 0.1s;">
+                <div
+                  class="bg-[#2b5278] text-white px-3 py-2 rounded-2xl rounded-tr-sm max-w-[85%] shadow-sm relative group cursor-pointer hover:bg-[#325e8a] transition-colors">
+                  <p class="text-[13px] leading-snug">Выяви ценовые аномалии</p>
+                  <div class="flex items-end justify-end gap-1 mt-1">
+                    <span class="text-[10px] text-[#6c8caf]">12:28</span>
+                    <i data-lucide="check-check" class="w-3 h-3 text-[#5bb6fa]"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bot Message 1 (Price Anomaly) -->
+              <div class="flex justify-start animate-fade-in-up" style="animation-delay: 0.3s;">
+                <div
+                  class="bg-[#182533] text-white px-3 py-2 rounded-2xl rounded-tl-sm max-w-[90%] shadow-sm border border-transparent hover:border-white/5 transition-colors">
+
+                  <!-- Reply/Context Header -->
+                  <div class="border-l-2 border-[#eab308] pl-2 mb-2">
+                    <div class="text-[#eab308] text-[11px] font-semibold">⚠️ Ценовые аномалии</div>
+                    <div class="text-white text-[12px] font-medium mt-1">Найдено 1 аномалий:</div>
+                  </div>
+
+                  <!-- Item Card -->
+                  <div class="bg-[#0e1621]/50 rounded p-2 mb-1 border border-white/5">
+                    <div class="text-[12px] font-bold text-white mb-1">1. Грунтовка глубокого проникновения</div>
+                    <div class="space-y-0.5 text-[11px]">
+                      <div class="flex gap-1"><span class="text-[#6c7883]">Поставщик:</span> <span
+                          class="text-blue-400">СтройБаза</span></div>
+                      <div class="flex gap-1"><span class="text-[#6c7883]">Цена:</span> <span
+                          class="text-white font-mono">1600.00 ₽</span></div>
+                      <div class="flex gap-1"><span class="text-[#6c7883]">Средняя:</span> <span
+                          class="text-gray-400">521.25 ₽</span></div>
+                      <div class="flex gap-1 mt-1 pt-1 border-t border-white/5"><span
+                          class="text-[#6c7883]">Отклонение:</span> <span class="text-red-400 font-bold">+207.0%</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-end justify-end gap-1 mt-1">
+                    <span class="text-[10px] text-[#55616e]">12:28</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- User Message 2 -->
+              <div class="flex justify-end animate-fade-in-up" style="animation-delay: 0.6s;">
+                <div
+                  class="bg-[#2b5278] text-white px-3 py-2 rounded-2xl rounded-tr-sm max-w-[85%] shadow-sm relative group cursor-pointer hover:bg-[#325e8a] transition-colors">
+                  <p class="text-[13px] leading-snug">Выяви экстремальных поставщиков</p>
+                  <div class="flex items-end justify-end gap-1 mt-1">
+                    <span class="text-[10px] text-[#6c8caf]">12:29</span>
+                    <i data-lucide="check-check" class="w-3 h-3 text-[#5bb6fa]"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bot Message 2 (Top Suppliers) -->
+              <div class="flex justify-start animate-fade-in-up" style="animation-delay: 0.9s;">
+                <div
+                  class="bg-[#182533] text-white px-3 py-2 rounded-2xl rounded-tl-sm max-w-[95%] shadow-sm border border-transparent hover:border-white/5 transition-colors">
+
+                  <div class="mb-2 text-[12px] leading-relaxed">
+                    <div class="font-bold text-white mb-1">🇮🇹 ТОП поставщиков по ценам:</div>
+
+                    <div
+                      class="mt-2 text-[#eab308] font-semibold text-[11px] uppercase tracking-wide opacity-80 mb-0.5">
+                      🏆
+                      ТОП-3 с мин. ценами:</div>
+                    <ul class="space-y-0.5 pl-1 border-l-2 border-green-500/30">
+                      <li>1. СтройБаза - <span class="text-green-400">12 поз.</span></li>
+                      <li>2. СтройТехника - <span class="text-green-400">7 поз.</span></li>
+                      <li>3. ЭлектроСнаб - <span class="text-green-400">5 поз.</span></li>
+                    </ul>
+
+                    <div
+                      class="mt-3 text-[#ef4444] font-semibold text-[11px] uppercase tracking-wide opacity-80 mb-0.5">
+                      📉
+                      ТОП-3 с макс. ценами:</div>
+                    <ul class="space-y-0.5 pl-1 border-l-2 border-red-500/30">
+                      <li>1. СтройАгрегат - <span class="text-red-400">13 поз.</span></li>
+                      <li>2. СтройРесурс - <span class="text-red-400">9 поз.</span></li>
+                      <li>3. ПрофиТехника - <span class="text-red-400">4 поз.</span></li>
+                    </ul>
+                  </div>
+
+                  <div class="flex items-end justify-end gap-1 mt-1">
+                    <span class="text-[10px] text-[#55616e]">12:29</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- User Message 3: Report Request -->
+              <div class="flex justify-end animate-fade-in-up" style="animation-delay: 1.2s;">
+                <div
+                  class="bg-[#2b5278] text-white px-3 py-2 rounded-2xl rounded-tr-sm max-w-[85%] shadow-sm relative group cursor-pointer hover:bg-[#325e8a] transition-colors">
+                  <p class="text-[13px] leading-snug">Сформируй отчет по аномалиям и отправь юристам</p>
+                  <div class="flex items-end justify-end gap-1 mt-1">
+                    <span class="text-[10px] text-[#6c8caf]">12:30</span>
+                    <i data-lucide="check-check" class="w-3 h-3 text-[#5bb6fa]"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bot Message 3: Report Confirmation -->
+              <div class="flex justify-start animate-fade-in-up" style="animation-delay: 1.5s;">
+                <div
+                  class="bg-[#182533] text-white px-3 py-2 rounded-2xl rounded-tl-sm max-w-[90%] shadow-sm border border-transparent hover:border-white/5 transition-colors">
+
+                  <div class="mb-2 text-[12px] leading-relaxed">
+                    <div class="flex items-center gap-2 mb-2">
+                      <i data-lucide="file-check" class="w-4 h-4 text-green-400"></i>
+                      <span class="font-bold text-white">✅ Отчет сформирован</span>
+                    </div>
+
+                    <div class="bg-[#0e1621]/50 rounded p-2 mb-2 border border-white/5">
+                      <div class="text-[11px] space-y-1">
+                        <div class="flex gap-2">
+                          <span class="text-[#6c7883]">📄 Файл:</span>
+                          <span class="text-blue-400">price_anomalies_report.pdf</span>
+                        </div>
+                        <div class="flex gap-2">
+                          <span class="text-[#6c7883]">📊 Аномалий:</span>
+                          <span class="text-white">1 позиция</span>
+                        </div>
+                        <div class="flex gap-2">
+                          <span class="text-[#6c7883]">💰 Сумма:</span>
+                          <span class="text-red-400 font-bold">+1078.75 ₽</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="text-[11px] text-gray-400 mb-1">
+                      📧 Отправлено:
+                    </div>
+                    <div class="flex flex-wrap gap-1">
+                      <span
+                        class="px-2 py-0.5 bg-green-500/10 border border-green-500/20 rounded text-[10px] text-green-400">
+                        legal@alabuga.ru
+                      </span>
+                      <span
+                        class="px-2 py-0.5 bg-green-500/10 border border-green-500/20 rounded text-[10px] text-green-400">
+                        procurement@alabuga.ru
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="flex items-end justify-end gap-1 mt-1">
+                    <span class="text-[10px] text-[#55616e]">12:30</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Input Area -->
+            <div class="bg-[#17212b] p-2 flex items-center gap-2 border-t border-[#0e1621] shadow-lg z-20 relative">
+              <button
+                class="w-9 h-9 flex items-center justify-center text-[#6c7883] hover:text-[#8594a1] transition-colors rounded-full hover:bg-white/5">
+                <i data-lucide="paperclip" class="w-5 h-5 opacity-80"></i>
+              </button>
+
+              <div
+                class="flex-grow bg-[#0e1621] h-9 rounded-2xl px-4 flex items-center text-white text-[13px] placeholder-[#55616e]"
+                contenteditable="true">
+                Message
+              </div>
+
+              <button
+                class="w-9 h-9 flex items-center justify-center text-[#6c7883] hover:text-[#8594a1] transition-colors rounded-full hover:bg-white/5">
+                <i data-lucide="mic" class="w-5 h-5 opacity-80"></i>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats/Benefits Section -->
+  <section class="py-16 border-b border-white/5">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center md:text-left">
+          <div class="text-3xl md:text-4xl font-bold text-white mb-2">8 лет</div>
+          <div class="text-sm text-gray-400 uppercase tracking-wide">на рынке разработки</div>
+        </div>
+        <div class="text-center md:text-left">
+          <div class="text-3xl md:text-4xl font-bold text-white mb-2">35+</div>
+          <div class="text-sm text-gray-400 uppercase tracking-wide">Реализованных проектов</div>
+        </div>
+        <div class="text-center md:text-left">
+          <div class="text-3xl md:text-4xl font-bold text-blue-500 mb-2">15+</div>
+          <div class="text-sm text-gray-400 uppercase tracking-wide">Специалистов в команде</div>
+        </div>
+        <div class="text-center md:text-left">
+          <div class="text-3xl md:text-4xl font-bold text-green-400 mb-2">99.9%</div>
+          <div class="text-sm text-gray-400 uppercase tracking-wide">SLA доступности</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section id="services" class="py-24 bg-[#020408]">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-4 text-white">Ключевые компетенции</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Решаем задачи бизнеса и государства с помощью проверенных технологий, а не хайпа.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Big Card: AI Agents -->
+        <div
+          class="md:col-span-2 bg-[#0B0D14] border border-white/10 p-10 rounded-xl hover:border-blue-500/30 transition-colors group">
+          <div
+            class="w-12 h-12 bg-blue-900/30 rounded-lg flex items-center justify-center mb-6 text-blue-400 group-hover:scale-105 transition-transform">
+            <i data-lucide="bot" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-white">Корпоративные ИИ-Агенты (RAG)</h3>
+          <p class="text-gray-400 mb-6 leading-relaxed">
+            Внедрение локальных LLM (Llama, Mistral, Saiga) в контур заказчика. Агенты обучаются на вашей базе знаний
+            (Confluence, 1C, Документы) и помогают сотрудникам, не передавая данные наружу.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-3 py-1 bg-white/5 rounded text-xs border border-white/10 text-gray-300">Техподдержка 1
+              линии</span>
+            <span class="px-3 py-1 bg-white/5 rounded text-xs border border-white/10 text-gray-300">HR-скрининг</span>
+            <span class="px-3 py-1 bg-white/5 rounded text-xs border border-white/10 text-gray-300">Поиск по
+              документам</span>
+          </div>
+        </div>
+
+        <!-- Card: Analytics -->
+        <div
+          class="bg-[#0B0D14] border border-white/10 p-10 rounded-xl hover:border-blue-500/30 transition-colors group">
+          <div
+            class="w-12 h-12 bg-purple-900/30 rounded-lg flex items-center justify-center mb-6 text-purple-400 group-hover:scale-105 transition-transform">
+            <i data-lucide="line-chart" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-white">Предиктивная аналитика</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">
+            Математические модели для прогнозирования спроса и выявления "узких мест" на производстве.
+          </p>
+          <span class="text-purple-400 text-xs font-bold uppercase">Экономический эффект</span>
+        </div>
+
+        <!-- Card: Web & Integration -->
+        <div
+          class="bg-[#0B0D14] border border-white/10 p-10 rounded-xl hover:border-blue-500/30 transition-colors group">
+          <div
+            class="w-12 h-12 bg-green-900/30 rounded-lg flex items-center justify-center mb-6 text-green-400 group-hover:scale-105 transition-transform">
+            <i data-lucide="globe" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-white">Гос. платформы и Порталы</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">
+            Высоконагруженные системы, реестры и личные кабинеты. Импортозамещение зарубежного ПО (SAP, Oracle).
+          </p>
+          <span class="text-green-500 text-xs font-bold uppercase">Сертификация ФСТЭК (опц.)</span>
+        </div>
+
+        <!-- Big Card: Automation -->
+        <div
+          class="md:col-span-2 bg-[#0B0D14] border border-white/10 p-10 rounded-xl hover:border-blue-500/30 transition-colors group">
+          <div
+            class="w-12 h-12 bg-orange-900/30 rounded-lg flex items-center justify-center mb-6 text-orange-400 group-hover:scale-105 transition-transform">
+            <i data-lucide="database" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-white">Интеграция и Миграция данных</h3>
+          <p class="text-gray-400 mb-6 leading-relaxed">
+            Бесшовный переезд с зарубежных CRM и ERP на российские аналоги (Битрикс24, 1С). Разработка шин данных и API
+            шлюзов.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-3 py-1 bg-white/5 rounded text-xs border border-white/10 text-gray-300">1C-Bitrix
+              Enterprise</span>
+            <span class="px-3 py-1 bg-white/5 rounded text-xs border border-white/10 text-gray-300">PostgreSQL</span>
+            <span class="px-3 py-1 bg-white/5 rounded text-xs border border-white/10 text-gray-300">Astra Linux</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Security & Compliance Section -->
+  <section class="py-20 bg-[#0B0D14] border-t border-white/5">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 mb-4">
+          <i data-lucide="shield-check" class="text-green-500 w-8 h-8"></i>
+          <h2 class="text-3xl font-bold text-white">Безопасность и соответствие требованиям</h2>
+        </div>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Полное соответствие российскому законодательству и отраслевым стандартам
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Compliance Card 1 -->
+        <div class="bg-[#151921] border border-white/10 p-6 rounded-xl hover:border-green-500/30 transition-colors">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-green-500/10 rounded-lg flex items-center justify-center">
+              <i data-lucide="file-check" class="w-5 h-5 text-green-400"></i>
+            </div>
+            <h3 class="text-white font-bold">152-ФЗ</h3>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Полное соответствие требованиям о защите персональных данных. Обработка данных только на территории РФ.
+          </p>
+        </div>
+
+        <!-- Compliance Card 2 -->
+        <div class="bg-[#151921] border border-white/10 p-6 rounded-xl hover:border-blue-500/30 transition-colors">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center">
+              <i data-lucide="building" class="w-5 h-5 text-blue-400"></i>
+            </div>
+            <h3 class="text-white font-bold">187-ФЗ (КИИ)</h3>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Опыт работы с объектами критической информационной инфраструктуры. Соблюдение требований безопасности.
+          </p>
+        </div>
+
+        <!-- Compliance Card 3 -->
+        <div class="bg-[#151921] border border-white/10 p-6 rounded-xl hover:border-purple-500/30 transition-colors">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center">
+              <i data-lucide="award" class="w-5 h-5 text-purple-400"></i>
+            </div>
+            <h3 class="text-white font-bold">Аккредитация IT</h3>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Аккредитованная IT-компания (реестр Минцифры). Право на льготное налогообложение и гос. поддержку.
+          </p>
+        </div>
+
+        <!-- Compliance Card 4 -->
+        <div class="bg-[#151921] border border-white/10 p-6 rounded-xl hover:border-orange-500/30 transition-colors">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-orange-500/10 rounded-lg flex items-center justify-center">
+              <i data-lucide="flag" class="w-5 h-5 text-orange-400"></i>
+            </div>
+            <h3 class="text-white font-bold">Импортозамещение</h3>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            100% российский технологический стек. Astra Linux, PostgreSQL, отечественные LLM (Saiga, GigaChat).
+          </p>
+        </div>
+
+        <!-- Compliance Card 5 -->
+        <div class="bg-[#151921] border border-white/10 p-6 rounded-xl hover:border-red-500/30 transition-colors">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-red-500/10 rounded-lg flex items-center justify-center">
+              <i data-lucide="lock" class="w-5 h-5 text-red-400"></i>
+            </div>
+            <h3 class="text-white font-bold">On-Premise</h3>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Развертывание в закрытом контуре заказчика. Данные не покидают вашу инфраструктуру. Полный контроль.
+          </p>
+        </div>
+
+        <!-- Compliance Card 6 -->
+        <div class="bg-[#151921] border border-white/10 p-6 rounded-xl hover:border-yellow-500/30 transition-colors">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-yellow-500/10 rounded-lg flex items-center justify-center">
+              <i data-lucide="file-signature" class="w-5 h-5 text-yellow-400"></i>
+            </div>
+            <h3 class="text-white font-bold">NDA и ЭЦП</h3>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Соглашение о неразглашении до старта работ. Электронная подпись на всех документах и отчетах.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Work Section -->
+  <section class="py-20 bg-[#020408] border-t border-white/5">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-4 text-white">Как мы работаем</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Прозрачный процесс от аудита до промышленной эксплуатации с фиксированными сроками и гарантиями
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Step 1 -->
+        <div class="relative">
+          <div
+            class="bg-[#0B0D14] border border-white/10 p-8 rounded-xl hover:border-blue-500/30 transition-all group h-full">
+            <div
+              class="absolute -top-4 -left-4 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-900/50">
+              1
+            </div>
+            <div class="mb-4 mt-4">
+              <i data-lucide="search" class="w-8 h-8 text-blue-400 mb-3"></i>
+              <h3 class="text-xl font-bold text-white mb-2">Аудит и ТЗ</h3>
+              <div class="text-xs text-gray-500 uppercase tracking-wide mb-4">2-3 недели</div>
+            </div>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li class="flex gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-green-500 shrink-0 mt-0.5"></i>
+                <span>Выезд на объект</span>
+              </li>
+              <li class="flex gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-green-500 shrink-0 mt-0.5"></i>
+                <span>Интервью с пользователями</span>
+              </li>
+              <li class="flex gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-green-500 shrink-0 mt-0.5"></i>
+                <span>ТЗ с фиксированной ценой</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="relative">
+          <div
+            class="bg-[#0B0D14] border border-white/10 p-8 rounded-xl hover:border-purple-500/30 transition-all group h-full">
+            <div
+              class="absolute -top-4 -left-4 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-purple-900/50">
+              2
+            </div>
+            <div class="mb-4 mt-4">
+              <i data-lucide="flask-conical" class="w-8 h-8 text-purple-400 mb-3"></i>
+              <h3 class="text-xl font-bold text-white mb-2">Пилот</h3>
+              <div class="text-xs text-gray-500 uppercase tracking-wide mb-4">1-2 месяца</div>
+            </div>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li class="flex gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-green-500 shrink-0 mt-0.5"></i>
+                <span>MVP на 10-20 пользователей</span>
+              </li>
+              <li class="flex gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-green-500 shrink-0 mt-0.5"></i>
+                <span>Оценка эффективности</span>
+              </li>
+              <li class="flex gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-green-500 shrink-0 mt-0.5"></i>
+                <span>Корректировка требований</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="relative">
+          <div
+            class="bg-[#0B0D14] border border-white/10 p-8 rounded-xl hover:border-green-500/30 transition-all group h-full">
+            <div
+              class="absolute -top-4 -left-4 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-green-900/50">
+              3
+            </div>
+            <div class="mb-4 mt-4">
+              <i data-lucide="rocket" class="w-8 h-8 text-green-400 mb-3"></i>
+              <h3 class="text-xl font-bold text-white mb-2">Внедрение</h3>
+              <div class="text-xs text-gray-500 uppercase tracking-wide mb-4">3-6 месяцев</div>
+            </div>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li class="flex gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-green-500 shrink-0 mt-0.5"></i>
+                <span>Полномасштабный запуск</span>
+              </li>
+              <li class="flex gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-green-500 shrink-0 mt-0.5"></i>
+                <span>Обучение персонала</span>
+              </li>
+              <li class="flex gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-green-500 shrink-0 mt-0.5"></i>
+                <span>Передача исходного кода</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="relative">
+          <div
+            class="bg-[#0B0D14] border border-white/10 p-8 rounded-xl hover:border-orange-500/30 transition-all group h-full">
+            <div
+              class="absolute -top-4 -left-4 w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-orange-900/50">
+              4
+            </div>
+            <div class="mb-4 mt-4">
+              <i data-lucide="headphones" class="w-8 h-8 text-orange-400 mb-3"></i>
+              <h3 class="text-xl font-bold text-white mb-2">Поддержка</h3>
+              <div class="text-xs text-gray-500 uppercase tracking-wide mb-4">SLA 99.9%</div>
+            </div>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li class="flex gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-green-500 shrink-0 mt-0.5"></i>
+                <span>Гарантия 12 месяцев</span>
+              </li>
+              <li class="flex gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-green-500 shrink-0 mt-0.5"></i>
+                <span>Техподдержка 24/7</span>
+              </li>
+              <li class="flex gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-green-500 shrink-0 mt-0.5"></i>
+                <span>Регулярные обновления</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Legal Guarantees -->
+      <div class="mt-16 bg-[#0B0D14] border border-blue-500/20 rounded-xl p-8">
+        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+          <i data-lucide="scale" class="w-6 h-6 text-blue-400"></i>
+          Юридические гарантии
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="flex gap-3">
+            <i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 shrink-0 mt-0.5"></i>
+            <div>
+              <div class="text-white font-medium text-sm">Фиксированная стоимость</div>
+              <div class="text-gray-500 text-xs mt-1">Цена в договоре не меняется</div>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 shrink-0 mt-0.5"></i>
+            <div>
+              <div class="text-white font-medium text-sm">Штрафные санкции</div>
+              <div class="text-gray-500 text-xs mt-1">За срыв сроков по нашей вине</div>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 shrink-0 mt-0.5"></i>
+            <div>
+              <div class="text-white font-medium text-sm">Передача прав</div>
+              <div class="text-gray-500 text-xs mt-1">Исключительные права на код</div>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 shrink-0 mt-0.5"></i>
+            <div>
+              <div class="text-white font-medium text-sm">Гарантия 12 месяцев</div>
+              <div class="text-gray-500 text-xs mt-1">Бесплатное устранение дефектов</div>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 shrink-0 mt-0.5"></i>
+            <div>
+              <div class="text-white font-medium text-sm">Эскроу кода</div>
+              <div class="text-gray-500 text-xs mt-1">Для критичных систем (опционально)</div>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 shrink-0 mt-0.5"></i>
+            <div>
+              <div class="text-white font-medium text-sm">Страхование</div>
+              <div class="text-gray-500 text-xs mt-1">Ответственность до 50 млн ₽</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Slider -->
+  <section id="cases" class="py-20 bg-[#0B0D14] border-t border-white/5">
+    <div class="container mx-auto px-6">
+      <div class="mb-12 text-center">
+        <h2 class="text-3xl font-bold mb-2 text-white">Отраслевые решения</h2>
+        <p class="text-gray-400">Примеры внедрений с доказанной эффективностью</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Case 1: Alabuga -->
+        <div
+          class="case-card group cursor-pointer bg-[#151921] rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-all"
+          data-category="Госсектор" data-icon="building" data-color="cyan" data-title="АО «ОЭЗ ППТ «Алабуга»"
+          data-description="Разработан и внедрен корпоративный AI-ассистент, интегрированный с внутренней базой данных цен. Система автоматически анализирует сметы подрядчиков, сопоставляет их с рыночными ценами и выявляет завышения. Реализована интеграция с 1С и системой документооборота."
+          data-problem="Подрядчики завышают цены на материалы до 200%, что приводит к значительным финансовым потерям."
+          data-solution="AI проверяет 100% позиций сметы с рынком за 3 секунды. Работа в закрытом контуре (On-Premise) обеспечивает полную конфиденциальность."
+          data-stats='[{"value": "12-18 млн ₽", "label": "Экономия в год"}, {"value": "8 мес.", "label": "Окупаемость"}, {"value": "240%", "label": "ROI за год"}]'
+          data-metric-value="12-18 млн ₽" data-metric-label="Экономия в год на сметах">
+          <div class="p-6 h-full flex flex-col">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="p-2 bg-cyan-900/30 rounded text-cyan-300">
+                <i data-lucide="building" class="w-5 h-5"></i>
+              </div>
+              <div class="text-xs font-bold text-gray-500 uppercase">Госсектор</div>
+            </div>
+            <h3 class="text-lg font-bold mb-3 text-white">АО «ОЭЗ ППТ «Алабуга»</h3>
+            <p class="text-gray-400 text-sm mb-6 flex-grow">
+              Корпоративный AI-ассистент для проверки смет подрядчиков. Автоматическая сверка цен с рынком.
+            </p>
+            <div class="pt-4 border-t border-white/5">
+              <div class="text-2xl font-bold text-white mb-1">12-18 млн ₽</div>
+              <div class="text-xs text-gray-500">Экономия в год на сметах</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case 2: Manufacturing -->
+        <div
+          class="case-card group cursor-pointer bg-[#151921] rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-all"
+          data-category="Производство" data-icon="factory" data-color="green" data-title="Производственная компания"
+          data-description="Внедрена омниканальная система поддержки клиентов на базе AI. Бот классифицирует обращения, отвечает на типовые вопросы (80% запросов) и маршрутизирует сложные кейсы на операторов. Интеграция с WhatsApp Business API и CRM Bitrix24."
+          data-problem="Высокая нагрузка на колл-центр, потеря лидов из-за долгого ожидания, разрозненность каналов связи."
+          data-solution="Омниканальная AI-система. WhatsApp бот отвечает на 80% вопросов, полная синхронизация заказов с 1C и авто-создание сделок в Bitrix24."
+          data-stats='[{"value": "24/7", "label": "Обработка запросов"}, {"value": "80%", "label": "Авто-ответов"}, {"value": "100%", "label": "Синхронизация"}]'
+          data-metric-value="24/7" data-metric-label="Автоматическая обработка запросов">
+          <div class="p-6 h-full flex flex-col">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="p-2 bg-green-900/30 rounded text-green-300">
+                <i data-lucide="factory" class="w-5 h-5"></i>
+              </div>
+              <div class="text-xs font-bold text-gray-500 uppercase">Производство</div>
+            </div>
+            <h3 class="text-lg font-bold mb-3 text-white">Производственная компания</h3>
+            <p class="text-gray-400 text-sm mb-6 flex-grow">
+              ИИ-система клиентского сервиса с интеграцией WhatsApp, телефонии, 1C и Bitrix24.
+            </p>
+            <div class="pt-4 border-t border-white/5">
+              <div class="text-2xl font-bold text-white mb-1">24/7</div>
+              <div class="text-xs text-gray-500">Автоматическая обработка запросов</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case 3: EdTech -->
+        <div
+          class="case-card group cursor-pointer bg-[#151921] rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-all"
+          data-category="EdTech" data-icon="graduation-cap" data-color="purple" data-title="Health & Care (EdTech)"
+          data-description="Построена интеллектуальная воронка продаж. ИИ анализирует поведение пользователя на вебинаре, результаты входного тестирования и формирует персонализированное предложение. Автоматическое выставление счетов и контроль оплаты."
+          data-problem="Потеря лидов на этапах воронки, отсутствие персонализации, ручная обработка платежей и доступов."
+          data-solution="AI Sales Funnel: Диагностика потребностей -> Персонализированное предложение -> Автоматический прием оплаты и выдача доступов."
+          data-stats='[{"value": "+45%", "label": "Конверсия в продажу"}, {"value": "100%", "label": "Диагностика"}, {"value": "24/7", "label": "Работа воронки"}]'
+          data-metric-value="+45%" data-metric-label="Конверсия в продажу">
+          <div class="p-6 h-full flex flex-col">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="p-2 bg-purple-900/30 rounded text-purple-300">
+                <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+              </div>
+              <div class="text-xs font-bold text-gray-500 uppercase">EdTech</div>
+            </div>
+            <h3 class="text-lg font-bold mb-3 text-white">Health & Care (EdTech)</h3>
+            <p class="text-gray-400 text-sm mb-6 flex-grow">
+              AI Sales Funnel с диагностикой, персонализацией и автоматической обработкой платежей.
+            </p>
+            <div class="pt-4 border-t border-white/5">
+              <div class="text-2xl font-bold text-white mb-1">+45%</div>
+              <div class="text-xs text-gray-500">Конверсия в продажу</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case 4: Med -->
+        <div
+          class="case-card group cursor-pointer bg-[#151921] rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-all"
+          data-category="Медицина" data-icon="stethoscope" data-color="blue" data-title="Частная клиника (Москва)"
+          data-description="Система автоматического протоколирования приема врача. ИИ распознает диалог, структурирует анамнез и заполняет медицинскую карту по стандарту SOAP. Встроенный модуль контроля качества общения врача с пациентом."
+          data-problem="Врачи тратят до 40% времени на заполнение карт. Сложно контролировать качество и этику общения с пациентами."
+          data-solution="Автоматическая стенография приема, заполнение SOAP-карт, AI-скоринг коммуникативных навыков врача (эмпатия, понятность)."
+          data-stats='[{"value": "-40%", "label": "Времени на бумаги"}, {"value": "92%", "label": "Точность SOAP"}, {"value": "8.2", "label": "Средний балл врача"}]'
+          data-metric-value="-40%" data-metric-label="Времени врача на документацию (≈2.8 млн ₽/год экономии)">
+          <div class="p-6 h-full flex flex-col">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="p-2 bg-blue-900/30 rounded text-blue-300">
+                <i data-lucide="stethoscope" class="w-5 h-5"></i>
+              </div>
+              <div class="text-xs font-bold text-gray-500 uppercase">Медицина</div>
+            </div>
+            <h3 class="text-lg font-bold mb-3 text-white">Частная клиника (Москва)</h3>
+            <p class="text-gray-400 text-sm mb-6 flex-grow">
+              Автоматическая стенография приема, заполнение карт (SOAP) и контроль этики общения врача. 120+
+              специалистов.
+            </p>
+            <div class="pt-4 border-t border-white/5">
+              <div class="text-2xl font-bold text-white mb-1">-40%</div>
+              <div class="text-xs text-gray-500">Времени врача на документацию (≈2.8 млн ₽/год экономии)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case 5: Mining -->
+        <div
+          class="case-card group cursor-pointer bg-[#151921] rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-all"
+          data-category="Добыча" data-icon="pickaxe" data-color="orange"
+          data-title="Горнодобывающий холдинг (ТОП-10 РФ)"
+          data-description="Создана система нормализации справочника материально-технических ресурсов (МТР). ИИ выявляет дубликаты позиций, унифицирует наименования и прогнозирует потребность в запчастях на основе исторических данных и планов ремонтов."
+          data-problem="Дубликаты в справочнике МТР, неточный прогноз закупок, заморозка капитала в неликвидных запасах."
+          data-solution="AI-агент нормализации НСИ: выявление дублей, унификация наименований. Модуль прогнозирования потребности с учетом сезонности."
+          data-stats='[{"value": "100 млн ₽", "label": "Оптимизация стока"}, {"value": "-18%", "label": "Сокращение издержек"}, {"value": "94%", "label": "Точность прогноза"}]'
+          data-metric-value="100 млн ₽" data-metric-label="Объем оптимизированного складского запаса">
+          <div class="p-6 h-full flex flex-col">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="p-2 bg-orange-900/30 rounded text-orange-300">
+                <i data-lucide="pickaxe" class="w-5 h-5"></i>
+              </div>
+              <div class="text-xs font-bold text-gray-500 uppercase">Добыча</div>
+            </div>
+            <h3 class="text-lg font-bold mb-3 text-white">Горнодобывающий холдинг (ТОП-10 РФ)</h3>
+            <p class="text-gray-400 text-sm mb-6 flex-grow">
+              Нормализация базы МТР (материалов), устранение дублей и прогноз закупок с учетом сезонности. 3000+
+              сотрудников.
+            </p>
+            <div class="pt-4 border-t border-white/5">
+              <div class="text-2xl font-bold text-white mb-1">100 млн ₽</div>
+              <div class="text-xs text-gray-500">Объем оптимизированного складского запаса</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case 6: Real Estate -->
+        <div
+          class="case-card group cursor-pointer bg-[#151921] rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-all"
+          data-category="Недвижимость" data-icon="building-2" data-color="indigo"
+          data-title="Агентство элитной недвижимости"
+          data-description="Платформа для брокеров элитной недвижимости. Автоматическая генерация презентаций объектов в PDF по фотографиям и черновикам описаний. Мультиязычность и мгновенная отправка клиентам в мессенджеры."
+          data-problem="Долгая подготовка презентаций (до 48ч), разрозненные данные об объектах, отсутствие единой аналитики."
+          data-solution="Единая экосистема: мгновенная генерация PDF-презентаций, авто-выгрузка на классифайды, AI-прогноз спроса и цены."
+          data-stats='[{"value": "×2.4", "label": "Скорость работы"}, {"value": "+12%", "label": "AI прогноз роста"}, {"value": "50+", "label": "Агентов в системе"}]'
+          data-metric-value="×2.4" data-metric-label="Рост скорости обработки лидов (с 48ч до 20ч)">
+          <div class="p-6 h-full flex flex-col">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="p-2 bg-indigo-900/30 rounded text-indigo-300">
+                <i data-lucide="building-2" class="w-5 h-5"></i>
+              </div>
+              <div class="text-xs font-bold text-gray-500 uppercase">Недвижимость</div>
+            </div>
+            <h3 class="text-lg font-bold mb-3 text-white">Агентство элитной недвижимости</h3>
+            <p class="text-gray-400 text-sm mb-6 flex-grow">
+              Единая экосистема для брокеров: автогенерация презентаций и выгрузка на классифайды. 50+ агентов.
+            </p>
+            <div class="pt-4 border-t border-white/5">
+              <div class="text-2xl font-bold text-white mb-1">×2.4</div>
+              <div class="text-xs text-gray-500">Рост скорости обработки лидов (с 48ч до 20ч)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section - Official -->
+  <section id="about" class="py-20 border-t border-white/5 bg-[#020408]">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-white">О компании</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            <span class="font-bold text-white">ООО «ФСТ-Интегро»</span> — российская IT-компания, специализирующаяся на
+            разработке сложного программного обеспечения и внедрении искусственного интеллекта в реальный сектор
+            экономики.
+          </p>
+          <p class="text-gray-300 mb-8 leading-relaxed">
+            Являемся резидентом ОЭЗ «Иннополис». С 2017 года прошли путь от грантовых программ Фонда содействия
+            инновациям
+            (гранты «Старт» и «Развитие» на общую сумму 8 млн ₽) до стратегического партнерства с крупнейшими игроками
+            рынка.
+          </p>
+
+          <!-- Team & Achievements -->
+          <div class="bg-[#0B0D14] border border-blue-500/20 rounded-xl p-6 mb-8">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <i data-lucide="users" class="w-5 h-5 text-blue-400"></i>
+              Команда и достижения
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+              <div class="flex gap-3">
+                <i data-lucide="user-check" class="w-5 h-5 text-green-400 shrink-0 mt-0.5"></i>
+                <div>
+                  <div class="text-white font-medium">15+ специалистов</div>
+                  <div class="text-gray-500 text-xs mt-1">Senior разработчики, ML-инженеры, DevOps</div>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <i data-lucide="graduation-cap" class="w-5 h-5 text-purple-400 shrink-0 mt-0.5"></i>
+                <div>
+                  <div class="text-white font-medium">Высокая квалификация</div>
+                  <div class="text-gray-500 text-xs mt-1">PhD, сертификации AWS, Kubernetes, ML</div>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <i data-lucide="trophy" class="w-5 h-5 text-yellow-400 shrink-0 mt-0.5"></i>
+                <div>
+                  <div class="text-white font-medium">Гранты ФСИ</div>
+                  <div class="text-gray-500 text-xs mt-1">«Старт» (2018) и «Развитие» (2020) — 8 млн ₽</div>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <i data-lucide="trending-up" class="w-5 h-5 text-blue-400 shrink-0 mt-0.5"></i>
+                <div>
+                  <div class="text-white font-medium">Стабильный рост</div>
+                  <div class="text-gray-500 text-xs mt-1">Выручка +120% год к году (2023-2024)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Partnerships -->
+          <div class="mb-8">
+            <h4 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Партнерства и технологии</h4>
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="px-3 py-2 bg-[#151921] border border-white/10 rounded text-xs text-gray-300 flex items-center gap-2">
+                <i data-lucide="check-circle" class="w-3 h-3 text-green-500"></i>
+                1C-Bitrix Partner
+              </span>
+              <span
+                class="px-3 py-2 bg-[#151921] border border-white/10 rounded text-xs text-gray-300 flex items-center gap-2">
+                <i data-lucide="check-circle" class="w-3 h-3 text-green-500"></i>
+                Astra Linux Certified
+              </span>
+              <span
+                class="px-3 py-2 bg-[#151921] border border-white/10 rounded text-xs text-gray-300 flex items-center gap-2">
+                <i data-lucide="check-circle" class="w-3 h-3 text-green-500"></i>
+                PostgreSQL Pro
+              </span>
+              <span
+                class="px-3 py-2 bg-[#151921] border border-white/10 rounded text-xs text-gray-300 flex items-center gap-2">
+                <i data-lucide="check-circle" class="w-3 h-3 text-green-500"></i>
+                Yandex Cloud Partner
+              </span>
+            </div>
+          </div>
+
+          <div class="text-sm">
+            <div class="p-4 bg-[#151921] rounded border border-white/10">
+              <div class="text-gray-500 text-xs uppercase mb-1">Локация</div>
+              <div class="text-white font-medium">г. Иннополис, Татарстан</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[#151921] p-8 rounded-xl border border-white/10">
+          <h3 class="text-lg font-bold mb-6 text-white border-b border-white/10 pb-4">Стандарты работы</h3>
+          <ul class="space-y-5">
+            <li class="flex gap-4 items-start">
+              <i data-lucide="file-text" class="text-blue-500 shrink-0 mt-1 w-5 h-5"></i>
+              <div>
+                <div class="text-white font-medium text-sm">Прозрачный документооборот</div>
+                <div class="text-gray-500 text-xs mt-1">Работаем по договору, предоставляем акты, передаем
+                  исключительные
+                  права на код заказчику.</div>
+              </div>
+            </li>
+            <li class="flex gap-4 items-start">
+              <i data-lucide="shield-check" class="text-green-500 shrink-0 mt-1 w-5 h-5"></i>
+              <div>
+                <div class="text-white font-medium text-sm">Безопасность (NDA)</div>
+                <div class="text-gray-500 text-xs mt-1">Подписываем соглашение о неразглашении до старта работ. Ваши
+                  данные надежно защищены.</div>
+              </div>
+            </li>
+            <li class="flex gap-4 items-start">
+              <i data-lucide="server" class="text-purple-500 shrink-0 mt-1 w-5 h-5"></i>
+              <div>
+                <div class="text-white font-medium text-sm">Техническая поддержка</div>
+                <div class="text-gray-500 text-xs mt-1">Гарантийный период и SLA на критически важные системы.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-[#0B0D14] border-t border-white/5">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4 text-white">Обсудить проект</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Выберите формат взаимодействия, который подходит вашей организации
+        </p>
+      </div>
+      <div class="flex flex-col md:flex-row gap-12">
+        <div class="w-full md:w-1/2">
+
+          <!-- Segmented CTAs -->
+          <div class="space-y-4 mb-8">
+            <div data-option="government"
+              class="cta-option bg-[#151921] border border-blue-500/20 rounded-lg p-4 hover:border-blue-500/40 transition-colors cursor-pointer group">
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-blue-500/20 transition-colors">
+                  <i data-lucide="landmark" class="w-5 h-5 text-blue-400"></i>
+                </div>
+                <div class="flex-grow">
+                  <div class="text-white font-bold text-sm mb-1">Для госсектора</div>
+                  <div class="text-gray-400 text-xs mb-2">Коммерческое предложение для участия в тендере</div>
+                  <div class="text-blue-400 text-xs font-medium">Подготовим КП за 24 часа →</div>
+                </div>
+                <div class="checkmark hidden">
+                  <i data-lucide="check-circle" class="w-5 h-5 text-blue-400"></i>
+                </div>
+              </div>
+            </div>
+
+            <div data-option="enterprise"
+              class="cta-option bg-[#151921] border border-purple-500/20 rounded-lg p-4 hover:border-purple-500/40 transition-colors cursor-pointer group">
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-purple-500/20 transition-colors">
+                  <i data-lucide="building-2" class="w-5 h-5 text-purple-400"></i>
+                </div>
+                <div class="flex-grow">
+                  <div class="text-white font-bold text-sm mb-1">Для крупного бизнеса</div>
+                  <div class="text-gray-400 text-xs mb-2">Бесплатный аудит текущих процессов и рекомендации</div>
+                  <div class="text-purple-400 text-xs font-medium">Заказать аудит →</div>
+                </div>
+                <div class="checkmark hidden">
+                  <i data-lucide="check-circle" class="w-5 h-5 text-purple-400"></i>
+                </div>
+              </div>
+            </div>
+
+            <div data-option="smb"
+              class="cta-option bg-[#151921] border border-green-500/20 rounded-lg p-4 hover:border-green-500/40 transition-colors cursor-pointer group">
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-10 h-10 bg-green-500/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-green-500/20 transition-colors">
+                  <i data-lucide="rocket" class="w-5 h-5 text-green-400"></i>
+                </div>
+                <div class="flex-grow">
+                  <div class="text-white font-bold text-sm mb-1">Для среднего бизнеса</div>
+                  <div class="text-gray-400 text-xs mb-2">Начните с пилотного проекта (от 500 тыс. ₽)</div>
+                  <div class="text-green-400 text-xs font-medium">Обсудить пилот →</div>
+                </div>
+                <div class="checkmark hidden">
+                  <i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center border border-blue-500/20">
+                <i data-lucide="smartphone" class="w-5 h-5 text-blue-400"></i>
+              </div>
+              <div>
+                <div class="text-xs text-gray-500 uppercase">Контактное лицо</div>
+                <div class="font-bold text-white text-lg">Артур Мадышин</div>
+                <div class="text-sm text-blue-400 font-mono hover:text-blue-300 transition-colors">
+                  <a href="tel:+79872918590">+7 987 291 8590</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center border border-blue-500/20">
+                <i data-lucide="message-square" class="w-5 h-5 text-blue-400"></i>
+              </div>
+              <div>
+                <div class="text-xs text-gray-500 uppercase">Мессенджер</div>
+                <a href="https://t.me/Artur1187"
+                  class="font-bold text-white hover:text-blue-400 transition-colors">Telegram: @Artur1187</a>
+              </div>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-white/5 text-xs text-gray-500">
+              <p class="mb-2 font-bold text-gray-400">Реквизиты:</p>
+              <p>ООО "ФСТ-Интегро"</p>
+              <p>Юр. адрес: 420500, РТ, г. Иннополис, ул. Спортивная, 102, оф. 2</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 bg-[#151921] p-8 rounded-xl border border-white/10">
+          <form id="contact-form" class="space-y-5">
+            <div>
+              <label class="block text-xs font-bold text-gray-500 uppercase mb-2">ФИО / Организация</label>
+              <input type="text" name="name" required
+                class="w-full bg-[#151921] border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
+                placeholder="Иванов И.И. (ООО 'Компания')">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Контактный телефон</label>
+              <input type="tel" name="phone" required
+                class="w-full bg-[#151921] border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
+                placeholder="+7 (___) ___-__-__">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Кратко о задаче</label>
+              <textarea name="message" required
+                class="w-full bg-[#151921] border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors h-32"
+                placeholder="Требуется разработка парсера / внедрение ИИ..."></textarea>
+            </div>
+            <button type="submit"
+              class="w-full bg-blue-700 hover:bg-blue-600 transition-colors py-4 rounded font-bold text-white uppercase tracking-wider text-sm shadow-lg">
+              Запросить КП
+            </button>
+            <p class="text-[10px] text-gray-600 text-center leading-tight flex items-center justify-center gap-2">
+              <i data-lucide="check-square" class="w-3 h-3 text-green-500 shrink-0"></i>
+              Нажимая кнопку, вы даете согласие на обработку персональных данных в соответствии с Политикой
+              конфиденциальности.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-white/5 text-center text-gray-600 text-sm bg-[#020408]">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p>© 2017-2026 ООО "ФСТ-Интегро". Все права защищены.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-gray-400">Политика конфиденциальности</a>
+        <a href="#" class="hover:text-gray-400">Реквизиты</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Form Handler Script -->
+  <script src="js/form-handler.js"></script>
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ООО «ФСТ-Интегро»",
+    "alternateName": "FST AI",
+    "url": "https://fst-ai.ru",
+    "logo": "https://fst-ai.ru/logo.png",
+    "sameAs": [
+      "https://t.me/fst_ai"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+7-987-291-8590",
+      "contactType": "sales",
+      "areaServed": "RU",
+      "availableLanguage": "Russian"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Иннополис",
+      "addressRegion": "Республика Татарстан",
+      "streetAddress": "ул. Университетская, д. 7",
+      "addressCountry": "RU"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "FST AI Platform",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Linux, Windows",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "RUB",
+      "availability": "https://schema.org/InStock"
+    },
+    "description": "Платформа для развертывания корпоративных ИИ-агентов и предиктивной аналитики в закрытом контуре (On-Premise)."
+  }
+  </script>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function () {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.remove('bg-transparent', 'py-5');
+        navbar.classList.add('bg-[#020408]/95', 'backdrop-blur-md', 'border-b', 'border-white/5', 'py-3');
+      } else {
+        navbar.classList.remove('bg-[#020408]/95', 'backdrop-blur-md', 'border-b', 'border-white/5', 'py-3');
+        navbar.classList.add('bg-transparent', 'py-5');
+      }
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+    mobileMenuBtn.addEventListener('click', function () {
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('flex');
+
+      // Toggle icon
+      const icon = mobileMenuBtn.querySelector('i');
+      if (mobileMenu.classList.contains('flex')) {
+        icon.setAttribute('data-lucide', 'x');
+      } else {
+        icon.setAttribute('data-lucide', 'menu');
+      }
+      lucide.createIcons();
+    });
+
+    // Close mobile menu when clicking on a link
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+        const icon = mobileMenuBtn.querySelector('i');
+        icon.setAttribute('data-lucide', 'menu');
+        lucide.createIcons();
+      });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+  <!-- Project Case Modal -->
+  <div id="case-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+
+    <!-- Modal Content -->
+    <div
+      class="modal-content relative bg-[#0e1621] w-full max-w-2xl mx-4 rounded-2xl border border-white/10 shadow-2xl transform scale-95 opacity-0 transition-all duration-300">
+
+      <!-- Close Button -->
+      <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors z-10">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="p-8">
+        <!-- Header -->
+        <div class="flex items-start gap-5 mb-6">
+          <div id="m-icon-container" class="p-3 rounded-xl bg-blue-900/30 text-blue-300 shrink-0">
+            <i id="m-icon" data-lucide="building" class="w-8 h-8"></i>
+          </div>
+          <div>
+            <div id="m-category" class="text-xs font-bold uppercase tracking-wider text-blue-400 mb-2">Category</div>
+            <h2 id="m-title" class="text-2xl font-bold text-white leading-tight">Project Title</h2>
+          </div>
+        </div>
+
+        <!-- Body -->
+        <div class="space-y-6">
+          <p id="m-description" class="text-gray-300 leading-relaxed text-base">
+            Detailed description goes here...
+          </p>
+
+          <!-- Metrics -->
+          <div id="m-metric-container" class="mt-6 pt-6 border-t border-white/10">
+            <div id="m-metric-value" class="text-4xl font-bold text-white mb-1">Value</div>
+            <div id="m-metric-label" class="text-sm text-gray-500 uppercase tracking-wide">Label</div>
+          </div>
+
+          <!-- Call to Action -->
+          <div class="mt-8 pt-6 border-t border-white/10 flex justify-end">
+            <button
+              class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center gap-2 shadow-lg shadow-blue-900/20 hover:shadow-blue-900/40"
+              onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); document.getElementById('close-modal').click();">
+              <span>Обсудить похожий проект</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/cases.js"></script>
+</body>
+
+</html>
