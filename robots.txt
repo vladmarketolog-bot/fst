@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fst-ai.ru/sitemap.xml
